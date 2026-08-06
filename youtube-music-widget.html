@@ -144,7 +144,13 @@
   .play-btn:hover{ color:#1a1a1a; opacity:.9; }
   .play-btn svg{ width:20px; height:20px; }
 
-  #playerHolder{ display:none; }
+  #playerHolder{
+    position:absolute;
+    top:-9999px;
+    left:-9999px;
+    width:200px;
+    height:200px;
+  }
 
   .brand-row{
     display:flex;
@@ -200,7 +206,7 @@
 
 <script>
   // ==== CONFIGURE YOUR PLAYLIST HERE ====
-  const PLAYLIST_ID = "PLoFqog36C2E0yMWv3eVUd673K_A7FVoIG"; // ТИМЧАСОВО дефолтний lofi для тесту
+  const PLAYLIST_ID = "PLMHH2KuWO0nY"; // твій плейлист
   // =======================================
 
   let player;
@@ -266,8 +272,8 @@
 
   window.onYouTubeIframeAPIReady = function(){
     player = new YT.Player('ytplayer', {
-      height: '0',
-      width: '0',
+      height: '200',
+      width: '200',
       playerVars: {
         listType: 'playlist',
         list: PLAYLIST_ID,
